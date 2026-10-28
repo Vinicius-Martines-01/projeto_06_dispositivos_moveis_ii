@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Controle de Combustível</string>
+    <string name="title_abastecimento">Registro de Abastecimento</string>
+    <string name="title_comparativo">Comparativo Etanol x Gasolina</string>
+    <string name="gasoline">Gasolina</string>
+    <string name="ethanol">Etanol</string>
+    <string name="diesel">Diesel</string>
+    <string name="gnv">GNV</string>
+</resources>

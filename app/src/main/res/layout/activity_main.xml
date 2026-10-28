@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Controle de Combustível"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Período e Datas"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/editPrevDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data anterior (dd/mm/aaaa)"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true" />
+
+        <EditText
+            android:id="@+id/editCurrDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data atual (dd/mm/aaaa)"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quilometragem (Hodômetro)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/editPrevOdometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hodômetro anterior (km)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editCurrOdometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hodômetro atual (km)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abastecimento"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/editLiters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Litros abastecidos"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editPricePerLiter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Valor por litro (R$)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Combustível"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupFuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioGasoline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gasolina"
+                android:checked="true"
+                android:layout_marginEnd="12dp" />
+
+            <RadioButton
+                android:id="@+id/radioEthanol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etanol"
+                android:layout_marginEnd="12dp" />
+
+            <RadioButton
+                android:id="@+id/radioDiesel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diesel" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Calcular" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Limpar" />
+        </LinearLayout>
+
+        <!-- Resultados -->
+        <LinearLayout
+            android:id="@+id/layoutResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:background="#EEEEEE"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultados da Análise"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/txtAvgConsumption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Consumo médio: 0.00 km/l"
+                android:textSize="15sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/txtCostPerKm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custo efetivo: R$ 0.00 / km"
+                android:textSize="15sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/txtKmPerDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Média por dia: 0.00 km/dia"
+                android:textSize="15sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/txtExtraDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Combustível: Gasolina | Distância: 0 km"
+                android:textSize="13sp"
+                android:textColor="#555555" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGoToComparison"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comparar Etanol x Gasolina"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</ScrollView>
